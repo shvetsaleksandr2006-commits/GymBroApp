@@ -15,7 +15,6 @@ hr {
     justify-content: start;
     border: 1px solid #181818;
     max-width: 1250px;
-    
 }
 
 .hero {
@@ -26,7 +25,6 @@ hr {
 .logo {
     width: 30px;
     height: auto;
-    justify-content: center;
 }
 
 .hero-content {
@@ -112,3 +110,24 @@ hr {
     background-color: #0038e1;
     box-shadow: 2px 4px 8px #16e1f5 ;
 }
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h6 {
+    color:#dbdbdb ;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.some {
+    width: 100px;
+    height: auto;
+}
+
