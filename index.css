@@ -1,0 +1,36 @@
+.slogan {
+    color: #ffffff;
+    font-family: "Inter", Arial;
+    font-weight: italic;
+}
+
+.section1 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slogan2 {
+    color: #dbdbdb;
+}
+
+.micro-title {
+    color:#0038e1;
+    font-family: "Inter", Arial;
+    font-weight: italic;
+    font-size: 12px;
+}
+
+.gymimage1 {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-member {
+    background-color: #0038e1;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #16e1f5;
+}
+
