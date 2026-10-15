@@ -82,5 +82,37 @@
 .image-block {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.image-link {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+    width: 320px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.block-title {
+    color: #ffffff;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.details {
+    color: #666666;
+}
+
+.hero2 {
+    background-color: #0B0F12;
+    padding: 20px;
+}
+
+.micro-title2 {
+    color: #0038e1;
+    font-family: "Inter", Arial;
+    font-weight: italic;
+    font-size: 10px;
 }
