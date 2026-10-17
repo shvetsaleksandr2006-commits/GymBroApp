@@ -4,8 +4,9 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>GymBro App</title>
-      <link rel="stylesheet" href="index.css" />
+      <link rel="stylesheet" href="Pages/index/index.css" />
       <link rel="stylesheet" href="Global/global.css" />  
+      <link rel="stylesheet" href="Global/media.css">
     </head>
     <body>
       <section class="hero">
@@ -17,15 +18,34 @@
               <span class="hero-text-2">BroUp</span>
             </div>
           </div>
+          <div class="desktop-nav">
+            <nav class="navigation">
+              <a href="#" class="nav">Community</a>
+              <a href="#" class="nav">Why GymBroUp</a>
+            </nav>
 
-          <nav class="navigation">
-            <a href="#" class="nav">Community</a>
-            <a href="#" class="nav">Why GymBroUp</a>
-          </nav>
-
-          <div class="hero-buttons">
-            <a href="Pages/login/login.html" class="login-button">Login</a>
-            <a href="Pages/signup/signup.html" class="signup-button">Become a Member</a>
+            <div class="hero-buttons">
+              <a href="Pages/login/login.html" class="login-button">Login</a>
+              <a href="Pages/signup/signup.html" class="signup-button">Become a Member</a>
+            </div>
+          </div>
+          <div class="mobile-nav">
+            <button class="burger-nav">
+              <span ></span>
+              <span ></span>
+              <span ></span>
+            </button>
+            <div class="mobile-menu">
+              <div class="menu-buttons">
+                <a href="#" class="menu-btn">Become a Member</a>
+                <hr class="line">
+                <a href="#" class="menu-btn">Why GymBroUp</a>
+                <hr class="line">
+                <a href="#" class="menu-btn">Community</a>
+                <hr class="line">
+                <a href="#" class="menu-btn">Login</a>
+              </div>
+            </div>
           </div>
         </header>
         <hr>
@@ -132,5 +152,14 @@
           </a>
         </div>
       </footer>
+
+
+      <script>
+        var burger = document.querySelector('.burger-nav');
+
+        burger.addEventListener('click', () => {
+          burger.classList.toggle('active');
+        });
+      </script>
     </body>
 </html>

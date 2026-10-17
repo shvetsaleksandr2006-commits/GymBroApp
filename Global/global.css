@@ -8,6 +8,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap:20%;
 }
 
 hr {
@@ -66,15 +67,91 @@ hr {
     color:#ffffff6a;
     justify-content: space-between;
     align-items: center;
+    text-decoration: none;
 }
 
+.desktop-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
 
+.mobile-nav {
+    display: none;
+}
 
 
 .hero-buttons{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.burger-nav {   
+    background-color: #0038e1;
+    box-shadow: 1px 1px 4px #16e1f5;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    transition: all 0.3s ease;
+}
+
+.burger-nav span {
+    background-color: #010101;
+    padding: 2px 5px;
+}
+
+
+.burger-nav.active span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.burger-nav.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-nav.active span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: #0038e1;
+    width: 120px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.menu-btn {
+    color:#dbdbdb;
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.line {
+    display: flex;
+    justify-content: start;
+    border: 1px solid #b3b3b3;
+    width: 100%;
 }
 
 
@@ -87,12 +164,14 @@ hr {
     cursor: pointer;
     border-radius: 5px;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .login-button:hover {
     background-color: #0E4AFF;
     color:#FFFFFF;
     box-shadow: 2px 4px 8px #16e1f5;
+    text-decoration: none;
 }
 
 .signup-button {
@@ -104,6 +183,7 @@ hr {
     cursor: pointer;
     border-radius: 5px;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .signup-button:hover {

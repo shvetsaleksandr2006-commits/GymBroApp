@@ -1,0 +1,32 @@
+@media  (max-width: 1200px) {
+    
+}
+
+@media (max-width: 900px) {
+    .image-link {
+        width: 30%;
+    }
+
+    .image-link img {
+        width: 100%;
+        height: auto;
+    }
+
+    header{
+        gap: 7%;
+    }
+}
+
+
+@media (max-width: 760px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
