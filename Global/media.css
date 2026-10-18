@@ -18,7 +18,7 @@
 }
 
 
-@media (max-width: 760px) {
+@media (max-width: 760px){
     .desktop-nav {
         display: none;
     }
@@ -28,5 +28,85 @@
         justify-content: flex-end;
         align-items: center;
     }
+
+    .gymimage1 {
+        width: 50vh;
+        height: auto;
+        
+    }
+
+    .slogan2 {
+        font-size: 12px;
+    }
+
+    .section1-downbox {
+        justify-content: space-evenly;
+    }
+
+    .pluses {
+        gap: 10vh;
+    }
+
+    .text  {
+        font-size: 12px;
+        font-weight: 600;
+    }
 }
 
+
+
+@media (max-width: 560px) {
+    .section1 { 
+        flex-direction: column;
+        gap: 10vh;
+    }
+
+    .pluses {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section1-downbox {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .first-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .image-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-link {
+        width: 100%;
+    }
+
+    .hero-text-footer {
+        font-size: 14px;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+}

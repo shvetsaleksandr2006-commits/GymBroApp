@@ -35,7 +35,7 @@
               <span ></span>
               <span ></span>
             </button>
-            <div class="mobile-menu">
+            <div id="mobile-menu" class="mobile-menu">
               <div class="menu-buttons">
                 <a href="#" class="menu-btn">Become a Member</a>
                 <hr class="line">
@@ -50,7 +50,7 @@
         </header>
         <hr>
         <div class="section1">
-          <div>
+          <div class="first-block">
             <h3 class="micro-title">YOUR NEXT LEVEL STARTS HERE</h3>
             <div class="slogan">
               <h1>Show up.</h1>
@@ -114,7 +114,7 @@
           <div class="image-link">
             <img src="Pages/index/gymimage3.png" alt="gymimage3" class="gymimage1">
               <div class="text-block">
-                <h5 class="block-title">Large selection</h5>
+                  <h5 class="block-title">Large selection</h5>
                 <p class="details">A wide selection of training programs. You can also create your own workout plans with GymBroUp, as we offer a huge list os exercises.</p>
               </div>
           </div>
@@ -134,7 +134,7 @@
         <div class="footer-block">
           <div class="hero-content">
             <img src="Pages/index/Logo.png" alt="GymBro Logo" class="logo" />
-            <div class="hero-text">
+            <div class="hero-text-footer">
               <span class="hero-text-1">Gym</span>
               <span class="hero-text-2">BroUp</span>
             </div>
@@ -155,11 +155,19 @@
 
 
       <script>
-        var burger = document.querySelector('.burger-nav');
+        const burger = document.querySelector('.burger-nav');
+        const menu = document.getElementById('mobile-menu');
 
         burger.addEventListener('click', () => {
           burger.classList.toggle('active');
+          menu.classList.toggle('active');
         });
+
+
+
+        
+
+        
       </script>
     </body>
 </html>
