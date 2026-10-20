@@ -119,8 +119,14 @@
 
     .footer-text {
         display: none;
-        
     }
 
-    
+    .footer-block {
+        display: flex;
+    }
+
+    .boss-logo {
+        width: 50px;
+        height:auto;
+    }
 }

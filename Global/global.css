@@ -218,8 +218,9 @@ h6 {
 }
 
 .footer-block {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .instagram {
@@ -241,4 +242,9 @@ h6 {
     display: block;
     padding: 5px 30px;
 
+}
+
+.boss-logo {
+    width: 100px;
+    height: auto;
 }
