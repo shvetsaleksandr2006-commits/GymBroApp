@@ -222,8 +222,8 @@ h6 {
     flex-direction: column;
 }
 
-.some {
-    width: 100px;
+.instagram {
+    width: 50px;
     height: auto;
 }
 
@@ -235,4 +235,10 @@ h6 {
     color: #0E4AFF;
     
     font-size: 24px;
+}
+
+.footer-text {
+    display: block;
+    padding: 5px 30px;
+
 }

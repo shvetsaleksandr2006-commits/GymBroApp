@@ -84,7 +84,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
 }
-
+ 
 .image-link {
     display: flex;
     flex-direction: column;
