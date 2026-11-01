@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    padding: 0; 
+    background-color: #0B0F12;
+}
+
+hr {
+    display: flex;
+    justify-content: start;
+    border: 1px solid #232222;
+    max-width: 1250px;
+}
+
+/*HEADER STYLES*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20%;
+    min-height: 10vh;
+}
+
+.hero {
+    background-color: #0B0F12;
+    padding: 20px;
+}
+
+.logo {
+    width: 30px;
+    height: auto;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    gap: 10px;
+    padding-left: 20px; 
+}
+
+.hero-text {
+    color: #0E4AFF;
+    
+    font-size: 24px;
+}
+
+.hero-text-1 {
+    color: #0E4AFF;
+    margin-bottom: 20px;
+}
+
+.hero-text-2 {
+    color: #b3b3b3;
+    margin-bottom: 20px;
+    margin-left: -7px;
+}
+
+
+.navigation {
+    display: flex;
+    gap: 30px;
+}
+
+.nav {
+    display:flex;
+    color:#ffffff6a;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.home-btn {
+    text-decoration: none;
+    color: #dbdbdb;
+}
+
+.btn-container {
+    display: block;
+    padding-right: 30px;
+}
+
+/* SECTION STYLES*/
+main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh ;
+    min-height: 50vh;
+}
+
+
+
+/* Left side */
+.left-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-image {
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.9)),
+    url("/Pages/images/gym1.png");
+    border-style: initial;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-size:contain;
+    background-position: center;
+    box-shadow: 0 1px 2px #0e4affa3;
+    cursor: pointer;
+}
+
+.bg-image:hover {
+    box-shadow: 0 2px 4px #0038e1;
+    border-color: #0038e1;
+}
+
+.left-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    margin-top: 260px;
+    margin-left: 20px;
+}
+
+.bg-hr {
+    width: 65vh;
+    border: 1px solid #232222;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bg-text {
+    color: #dbdbdb;
+    font-family: "Inter", Arial;
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.bg-text2 {
+    color: #dbdbdb;
+    font-family: "Inter", Arial;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}   
+
+.txt-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+.progress-icon {
+    width: 15px;
+    height: auto;
+}
+
+.slogan {
+    color: #FFFFFF;
+    font-family: "Inter", Arial;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+/*Right side - REGISTER FORM*/
+
+
+.right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.text-block h1 {
+    margin: 3px;
+}
+
+h1  {
+    font-family: "Inter", Arial;
+    color: #dbdbdb;
+    font-size: 24px;
+}
+
+.micro-title2 {
+    color: #0038e1;
+    font-family: "Inter", Arial;
+    font-weight: italic;
+    font-size: 12px;
+    margin: 3px;
+}
+
+p {
+    font-family: Inter, Arial, sans-serif;
+    color:#dbdbdb;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-group {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-title {
+    font-family: Inter, arial, sans-serif ;
+    color: #676768;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-weight: 700;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+
+.input {
+    background-color: rgb(20, 20, 23);
+    border: #383838  solid 1px;
+    border-bottom: #0038e1;
+    box-shadow: 0 2px 5px #0E4AFF;
+    width: 250px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #303030;
+    font-size: 10px;
+}
+
+
+
+.register-btn {
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #0E4AFF ;
+    border: none;
+    color: #ffffff;
+    font-family: Inter, arial, sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #0038e1;
+    box-shadow: 0 2px 3px #0038e1;
+    border-color: #0038e1;
+}
+
+.register-button {
+    margin-top: auto;
+}
+
+/* FOOTER STYLES*/
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+h6 {
+    color:#dbdbdb ;
+}
+
+.footer-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-height: min-content;
+}
+
+.instagram {
+    width: 50px;
+    height: auto;
+}
+
+.login-button a, .signup-button a {
+    text-decoration: none;
+}
+
+.hero-text-footer {
+    color: #0E4AFF;
+    
+    font-size: 24px;
+}
+
+.footer-text {
+    display: block;
+    padding: 5px 30px;
+}
+
+.foot-txt {
+    margin: 10px;
+}
+.boss-logo {
+    width: 70px;
+    height: auto;
+}

@@ -14,7 +14,7 @@ header {
 hr {
     display: flex;
     justify-content: start;
-    border: 1px solid #181818;
+    border: 1px solid #232222;
     max-width: 1250px;
 }
 
@@ -37,6 +37,7 @@ hr {
     font-weight: 700;
     font-style: italic;
     gap: 10px;
+    margin-bottom: 15px;
 }
 
 .hero-text {
@@ -59,7 +60,8 @@ hr {
 
 .navigation {
     display: flex;
-    gap: 30px;
+    margin-bottom: 15px;
+    gap: 70px;
 }
 
 .nav {
@@ -86,6 +88,7 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .burger-nav {   
@@ -248,3 +251,4 @@ h6 {
     width: 100px;
     height: auto;
 }
+
