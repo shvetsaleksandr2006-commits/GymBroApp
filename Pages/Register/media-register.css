@@ -1,0 +1,27 @@
+@media (max-width: 890px) {
+    .bg-image {
+        width: 400px;
+        height: 350px;
+    }
+
+    .left-text-block {
+        margin-top: 200px;
+        margin-left: 20px;
+    }
+
+    .bg-text2::after {
+        width: 170%;
+    }
+}
+
+@media (max-width: 770px) {
+
+    .left-block {
+        display: none;
+    }
+    
+    /* right-block */
+
+    
+
+}

@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0; 
     background-color: #0B0F12;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
 header {
@@ -62,6 +63,7 @@ hr {
     display: flex;
     margin-bottom: 15px;
     gap: 70px;
+    margin-left: clamp(0px, 8vw, 100px);
 }
 
 .nav {

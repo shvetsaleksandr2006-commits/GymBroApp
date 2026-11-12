@@ -6,8 +6,8 @@
       <title>GymBro App</title>
       <link rel="stylesheet" href="Global/index.css" />
       <link rel="stylesheet" href="Global/global.css" />  
-      <link rel="stylesheet" href="Global/media.css" />
-      <link rel="stylesheet" href="../../Global/style.css">
+      <link rel="stylesheet" href="Global/media-index.css" />
+      <link rel="stylesheet" href="Global/style.css">
     </head>
     <body>
       <section class="hero">
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="mobile-nav">
-            <button class="burger-nav">
+            <button class="burger-nav" type="button" aria-label="Toggle navigation" aria-controls="mobile-menu" aria-expanded="false">
               <span ></span>
               <span ></span>
               <span ></span>
@@ -44,7 +44,7 @@
                 <hr class="line">
                 <a href="#" class="menu-btn">Community</a>
                 <hr class="line">
-                <a href="login.html" class="menu-btn">Login</a>
+                <a href="Pages/login/login.html" class="menu-btn">Login</a>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@
 
         <div class="some">
           <a href="#">
-            <img src="Pages/images/Instagram.png" class="instagram">
+            <img src="Pages/images/Instagram.png" class="instagram" alt="Instagram">
           </a>
         </div>
       </footer>
@@ -158,9 +158,31 @@
         const burger = document.querySelector('.burger-nav');
         const menu = document.getElementById('mobile-menu');
 
+        function setMenuOpen(open) {
+          burger.classList.toggle('active', open);
+          menu.classList.toggle('active', open);
+          burger.setAttribute('aria-expanded', String(open));
+        }
+
         burger.addEventListener('click', () => {
-          burger.classList.toggle('active');
-          menu.classList.toggle('active');
+          setMenuOpen(burger.getAttribute('aria-expanded') !== 'true');
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && menu.classList.contains('active')) {
+            setMenuOpen(false);
+            burger.focus();
+          }
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!event.target.closest('.mobile-nav') || event.target.closest('.menu-btn')) {
+            setMenuOpen(false);
+          }
+        });
+
+        window.matchMedia('(max-width: 1000px)').addEventListener('change', () => {
+          setMenuOpen(false);
         });
 
 

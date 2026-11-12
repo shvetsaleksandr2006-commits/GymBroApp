@@ -6,6 +6,7 @@
 	<title>Create an account | GymBro</title>
 	<link rel="stylesheet" href="register.css">
 	<link rel="stylesheet" href="../../Global/style.css">
+	<link rel="stylesheet" href="media-register.css">
 </head>
 <body>
 	<section>
@@ -22,14 +23,13 @@
 				<a href="../../index.html" class="home-btn">Back to homepage</a>
 			</div>
 		</header>
-		<hr>
+		<hr> 
 		<main>
 			<div class="left-block">
 				<div class="bg-image">
 					<div class="left-text-block">
 						<h1 class="bg-text">Your next level is waiting.</h1>
 						<p class="bg-text2">Start your journey through the vast world of iron.</p>
-						<hr class="bg-hr">
 						<div class="txt-block">
 							<img src="../images/progress.png" alt="Progress Icon" class="progress-icon" />
 							<h3 class="slogan">Stronger every session. Better together.</h3>
@@ -60,22 +60,50 @@
 							<label for="phone" class="form-title">Phonenumber</label>
 							<input class="input" type="tel" id="phone" name="phone" placeholder="Enter your phonenumber" aria-label="Phone number" autocomplete="tel">
 						</div>
-						<div class="input-form">
-							<label for="password" class="form-title">Password</label>
-							<input class="input" type="password" id="password" name="password" placeholder="Create password" aria-label="Password" autocomplete="new-password">
+						<div class="input-form-password">
+							<label for="password" class="form-title password-label">Password</label>
+							<div class="password">
+								<input class="password-input" type="password" id="password" name="password" placeholder="Create password" aria-label="Password" autocomplete="new-password">
+								<button id="show-password" class="show-password" type="button">
+									<svg width="40" height="40" viewBox="0 0 100 100" >
+										<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF"stroke-width="3" fill="none" class="upper-eyelid"></path>
+										<circle cx="50" cy="50" r="10" fill="none" class="circle"></circle>
+										<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF" stroke-width="3" fill="none"></path>
+									</svg>
+								</button>
+							</div>
 						</div>
+					</div>
+					<div class="terms">
+						<p class="terms-text">By signing up, you agree to our <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>.</p>
 					</div>
 
 					<div class="register-button">
 						<button class="register-btn">Sign Up</button>
 					</div>
+
+
+					<div class="login-link">
+						<p class="login-ask">Already have an account? <a href="../login/login.html" class="login-link">Login</a></p>
+					</div>
+
+					<div class="signin-block">
+						<p>Sign in with:</p>
+						<div class="auth-btn">
+							<button class="google-btn" type="button"></button>
+						</div>
+						<div class="auth-btn">
+							<button class="telegram-btn" type="button"></button>
+						</div>
+					</div>
+					
 				</form>
 				
 
 			</div>
 		</main>
 
-		<hr>
+		<!-- <hr>
 		<footer>
 			<div class="footer-block">
 				<div class="hero-content">
@@ -98,8 +126,23 @@
 					<img src="../images/Instagram.png" class="instagram">
 				</a>
 			</div>
-		</footer>
+		</footer> -->
 	</section>
     
+
+	<script>
+		document.querySelector('#show-password').addEventListener('click', function(event) {
+			event.preventDefault();
+			const passwordInput = document.querySelector('#password');
+			if (passwordInput.type === 'password') {
+				passwordInput.type = 'text';
+				
+			} else {
+				passwordInput.type = 'password';
+				
+			}
+			this.classList.toggle('opened');
+		});
+	</script>
 </body>
 </html>
