@@ -46,31 +46,57 @@
 					<h1>Create your account.</h1>
 				</div>
 
-				<form action="register-form" class="register-form">
+				<form action="register-form" class="register-form" method="post" >
 					<div class="input-group">
 						<div class="input-form">
-							<label for="nickname" class="form-title">Username</label>
-							<input class="input" type="text" id="nickname" name="nickname" placeholder="Create Username" aria-label="Username" autocomplete="username">
+							<div class="field-header">
+								<label for="nickname" class="form-title">Username</label>
+								<span class="span" id="username-counter">0/6 min</span>
+							</div>
+							
+							<p id="username-message" class="field-message"></p>
+							<input class="input" type="text" id="nickname" name="nickname" placeholder="Create Username" aria-label="Username" autocomplete="username" minlength="6" maxlength="20" required >
 						</div>
 						<div class="input-form">
 							<label for="email" class="form-title">Email</label>
-							<input class="input" type="email" id="email" name="email" placeholder="Enter your email" aria-label="Email" autocomplete="email">
+							<p id="email-message" class="field-message"></p>
+							<input class="input" type="email" id="email" name="email" placeholder="Enter your email" aria-label="Email" autocomplete="email" required >
 						</div>
 						<div class="input-form">
-							<label for="phone" class="form-title">Phonenumber</label>
+							<div class="field-header">
+								<label for="phone" class="form-title">Phonenumber</label>
+								<span class="span">Optional</span>
+							</div>
+							
 							<input class="input" type="tel" id="phone" name="phone" placeholder="Enter your phonenumber" aria-label="Phone number" autocomplete="tel">
 						</div>
 						<div class="input-form-password">
-							<label for="password" class="form-title password-label">Password</label>
+							<div class="field-header">
+								<label for="password" class="form-title password-label">Password</label>
+								<span class="span">0/8 min</span>
+							</div>
+							<p id="password-message" class="field-message"></p>
 							<div class="password">
-								<input class="password-input" type="password" id="password" name="password" placeholder="Create password" aria-label="Password" autocomplete="new-password">
+								<input class="password-input" type="password" id="password" name="password"  placeholder="Create password" aria-label="Password" autocomplete="new-password" minlength="8" maxlength="128" required >
 								<button id="show-password" class="show-password" type="button">
 									<svg width="40" height="40" viewBox="0 0 100 100" >
 										<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF"stroke-width="3" fill="none" class="upper-eyelid"></path>
-										<circle cx="50" cy="50" r="10" fill="none" class="circle"></circle>
-										<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF" stroke-width="3" fill="none"></path>
+										<circle cx="50" cy="50" r="10" fill="none" class="circle"></circle>											<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF" stroke-width="3" fill="none"></path>
 									</svg>
 								</button>
+							</div>
+							<div>
+								<div class="strength-bar">
+									<span class="strength-bar-span"></span>
+									<span class="strength-bar-span"></span>
+									<span class="strength-bar-span"></span>
+									<span class="strength-bar-span"></span>
+									<span class="strength-bar-span"></span>
+								</div>
+								<div class="password-complexity-container">
+									<span class="password-complexity-span">Password complexity</span>
+									<span class="password-complexity-span">0/5</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -99,7 +125,6 @@
 					
 				</form>
 				
-
 			</div>
 		</main>
 
@@ -143,6 +168,53 @@
 			}
 			this.classList.toggle('opened');
 		});
+
+
+		document.querySelector('.register-btn').addEventListener('click', function(event) {
+			const passwordInput = document.querySelector('#password');
+			const password_message = document.querySelector('#password-message');
+			if(passwordInput.value.length >= 8) {
+				console.log('Password is valid');
+				passwordInput.style.borderColor = 'green'; // Change border color to green for valid password
+				password_message.textContent = ''; // Clear any previous message
+			}
+			else if(passwordInput.value.length === 0) {
+				passwordInput.style.borderColor = ''; // Reset border color when input is empty
+				password_message.textContent = 'Enter a password'; // Clear any previous message
+			}
+			else {
+				console.log('Password is too short');
+				passwordInput.style.borderColor = 'red'; // Change border color to red for invalid password
+				password_message.textContent = 'Password must be at least 8 characters long'; // Display error message
+			}
+
+			const  username_message = document.querySelector('#username-message');
+			const  usernameInput = document.querySelector('#nickname')
+			if(usernameInput.value.length <=5 ) {
+				username_message.textContent = 'Username must be at least 6 characters long. Use uppercase and lowercase letters and numbers.';
+				usernameInput.style.borderColor = 'orange';
+			}
+			else if (usernameInput.value.length > 5 && /[A-Z]/.test(usernameInput.value) && /[a-z]/.test(usernameInput.value) && /[0-9]/.test(usernameInput.value )) {
+				console.log('Username is valid');
+				usernameInput.style.borderColor = 'green';
+				
+			}
+			else {
+				usernameInput.style.borderColor = 'red';
+				username_message.textContent = 'Create a username';
+				username_message.textContent = 'Use uppercase and lowercase letters and numbers';
+			}
+		});
+
+		document.querySelector('#nickname').addEventListener('input', function(event) {
+			
+			let count = event.target.value.length;
+			let username_count = document.querySelector('#username-counter')
+			
+			username_count.textContent =`${count}/6 min`;
+			
+		});
+
 	</script>
 </body>
 </html>

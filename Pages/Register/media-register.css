@@ -19,9 +19,17 @@
     .left-block {
         display: none;
     }
-    
-    /* right-block */
+}
 
-    
+@media (max-width: 420px) {
+    .logo {
+        width: 25px;
+        height: auto;
+    }
 
+    .hero-text {
+        color: #0E4AFF;
+        
+        font-size: 18px;
+    }
 }
