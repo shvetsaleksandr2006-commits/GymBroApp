@@ -277,7 +277,7 @@ p {
 .form-title {
     font-family: Inter, arial, sans-serif ;
     color: #676768;
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 10px;
     margin-bottom: 3px;
     font-weight: 700;
@@ -302,12 +302,12 @@ p {
 
 .field-message {
     color: #ff0000;
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 2px;
     margin-bottom: 2px;
     text-align: center;
-    min-height: 12px;
-    line-height: 12px;
+    min-height: 10px;
+    line-height: 10px;
     max-width: 230px;
 }
 .password {
@@ -315,7 +315,7 @@ p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     width: 230px;
 }
 
@@ -363,7 +363,7 @@ p {
     box-sizing: border-box;
     border-radius: 5px;
     color: #bebebe;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .password-input {
@@ -396,46 +396,47 @@ p {
 }
 
 .strength-bar-span {
-    background-color: #676768;
+    background-color: #242424;
     width: 40px;
     height: 5px;
     border-radius: 50px;
-    border: 1px solid #0038e1;
+    border: 1px solid #000000;
 }
 
 .password-complexity-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 5px;
     
 }
 
 .password-complexity-span {
     font-family: Inter, arial, sans-serif ;
     color: #676768;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .terms {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 5px;
+    margin-top: 3px;
     width: 200px;
 }
 
 .terms-text {
     font-family: Inter, arial, sans-serif;
     color: #dbdbdb;
-    font-size: 10px;
-    font-weight: 600;
+    font-size: 8px;
+    font-weight: 400;
 }
 
 .terms-link {
     font-family: Inter, arial, sans-serif;
     color: #2a5fff;
-    font-size: 12px;
+    font-size: 8px;
     text-decoration: none;
     font-weight: 600;
 }

@@ -73,14 +73,14 @@
 						<div class="input-form-password">
 							<div class="field-header">
 								<label for="password" class="form-title password-label">Password</label>
-								<span class="span">0/8 min</span>
+								<span class="span" id="password-counter">0/8 min</span>
 							</div>
 							<p id="password-message" class="field-message"></p>
 							<div class="password">
 								<input class="password-input" type="password" id="password" name="password"  placeholder="Create password" aria-label="Password" autocomplete="new-password" minlength="8" maxlength="128" required >
 								<button id="show-password" class="show-password" type="button">
 									<svg width="40" height="40" viewBox="0 0 100 100" >
-										<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF"stroke-width="3" fill="none" class="upper-eyelid"></path>
+										<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF" stroke-width="3" fill="none" class="upper-eyelid"></path>
 										<circle cx="50" cy="50" r="10" fill="none" class="circle"></circle>											<path d="M 10 50 Q 50 90 90 50" stroke="#0E4AFF" stroke-width="3" fill="none"></path>
 									</svg>
 								</button>
@@ -95,7 +95,7 @@
 								</div>
 								<div class="password-complexity-container">
 									<span class="password-complexity-span">Password complexity</span>
-									<span class="password-complexity-span">0/5</span>
+									<span id="PasswordComplexity" class="password-complexity-span">0/5</span>
 								</div>
 							</div>
 						</div>
@@ -116,10 +116,10 @@
 					<div class="signin-block">
 						<p>Sign in with:</p>
 						<div class="auth-btn">
-							<button class="google-btn" type="button"></button>
+							<button class="google-btn" type="button" aria-label="google-auth"></button>
 						</div>
 						<div class="auth-btn">
-							<button class="telegram-btn" type="button"></button>
+							<button class="telegram-btn" type="button" aria-label="tg-auth"></button>
 						</div>
 					</div>
 					
@@ -170,51 +170,162 @@
 		});
 
 
-		document.querySelector('.register-btn').addEventListener('click', function(event) {
-			const passwordInput = document.querySelector('#password');
-			const password_message = document.querySelector('#password-message');
-			if(passwordInput.value.length >= 8) {
-				console.log('Password is valid');
-				passwordInput.style.borderColor = 'green'; // Change border color to green for valid password
-				password_message.textContent = ''; // Clear any previous message
-			}
-			else if(passwordInput.value.length === 0) {
-				passwordInput.style.borderColor = ''; // Reset border color when input is empty
-				password_message.textContent = 'Enter a password'; // Clear any previous message
-			}
-			else {
-				console.log('Password is too short');
-				passwordInput.style.borderColor = 'red'; // Change border color to red for invalid password
-				password_message.textContent = 'Password must be at least 8 characters long'; // Display error message
-			}
-
-			const  username_message = document.querySelector('#username-message');
-			const  usernameInput = document.querySelector('#nickname')
-			if(usernameInput.value.length <=5 ) {
-				username_message.textContent = 'Username must be at least 6 characters long. Use uppercase and lowercase letters and numbers.';
-				usernameInput.style.borderColor = 'orange';
-			}
-			else if (usernameInput.value.length > 5 && /[A-Z]/.test(usernameInput.value) && /[a-z]/.test(usernameInput.value) && /[0-9]/.test(usernameInput.value )) {
-				console.log('Username is valid');
-				usernameInput.style.borderColor = 'green';
-				
-			}
-			else {
-				usernameInput.style.borderColor = 'red';
-				username_message.textContent = 'Create a username';
-				username_message.textContent = 'Use uppercase and lowercase letters and numbers';
-			}
-		});
 
 		document.querySelector('#nickname').addEventListener('input', function(event) {
 			
 			let count = event.target.value.length;
 			let username_count = document.querySelector('#username-counter')
+			let message = document.querySelector('#username-message');
 			
 			username_count.textContent =`${count}/6 min`;
 			
+
+			if(count === 0) {
+				message.textContent = '';
+				event.target.style.borderColor = '';	
+			}
+			else if (count < 6) {
+				message.textContent = 'Username must contain at least 6 characters';
+				event.target.style.borderColor = 'red';
+			}
+			else if (!/[A-Z]/.test(event.target.value)) {
+				message.textContent = 'Add an uppercase  Latin letter';
+				event.target.style.borderColor = 'orange';
+			}
+			else if (!/[a-z]/.test(event.target.value)) {
+				message.textContent = 'Add a lowercase Latin letter';
+				event.target.style.borderColor = 'orange';
+			}
+			else if (!/[0-9]/.test(event.target.value)) {
+				message.textContent = 'Add a number';
+				event.target.style.borderColor = 'orange';
+			}
+			else {
+				message.textContent = '';
+				event.target.style.borderColor = 'green';
+			}
 		});
 
+		
+
+		document.querySelector('#email').addEventListener('input' , function(event) {
+			let emaillength = event.target.value.length;
+			let message = document.querySelector('#email-message');
+
+			if( emaillength === 0) {
+				message.textContent = '';
+				event.target.style.borderColor = '';
+			}
+			else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(event.target.value)) {
+				message.textContent = '';
+				event.target.style.borderColor = 'green';
+			}
+			else {
+				message.textContent = 'Email is invalid';
+				event.target.style.borderColor = 'red';
+			}
+		});
+
+
+		document.querySelector('#password').addEventListener('input' , function(event) {
+			let passwordScore = 0;
+			let passwordLength = event.target.value.length;
+			let password_complexity = document.querySelector('#PasswordComplexity');
+			let segments = document.querySelectorAll('.strength-bar-span');
+			let message = document.querySelector('#password-message');
+			let password_count = document.querySelector('#password-counter');
+			
+
+
+			if(passwordLength >= 8) {
+				passwordScore++;
+				
+					
+			}
+			
+			if(/[A-Z]/.test(event.target.value) && /[a-z]/.test(event.target.value)) {
+				passwordScore++;
+
+			}
+			
+			if(/[0-9]/.test(event.target.value)) {
+				passwordScore++;
+				
+			}
+			
+			if(/[^A-Za-z0-9\s]/.test(event.target.value)) {
+				passwordScore++;
+					
+			}
+			
+			if(passwordLength >= 15){
+				passwordScore++;
+			}
+			
+				
+			if (passwordLength < 8) {
+				passwordScore = 0;			
+			}	
+
+			for ( let i=0; i < segments.length; i++) {
+				if(i < passwordScore){
+					segments[i].style.backgroundColor = '#12f025';
+				}
+				else {
+					segments[i].style.backgroundColor = '#333334';
+				}
+			}
+
+			
+			 
+
+			if(passwordLength === 0) {
+				message.textContent = '';
+				event.target.style.borderColor = '';
+			}
+			
+			
+			else if(passwordLength < 8) {
+				message.textContent = 'Password must contain at least 8 characters';
+				event.target.style.borderColor = 'red';
+			}
+			else if (!/[A-Z]/.test(event.target.value) || !/[a-z]/.test(event.target.value)) {
+				message.textContent = 'Use uppercase and lowercase letters';
+				event.target.style.borderColor = 'orange';
+			}
+			else if (!/[0-9]/.test(event.target.value)) {
+				message.textContent = 'Add a number';
+				event.target.style.borderColor = 'orange';
+			}
+			else if (!/[^A-Za-z0-9\s]/.test(event.target.value)) {
+				message.textContent = 'Add a special character';
+				event.target.style.borderColor = 'orange';
+			}
+			else if (passwordLength < 15) {
+				message.textContent = 'Use at least 15 characters';
+				event.target.style.borderColor = 'yellow';
+			}
+			else {
+				message.textContent = '';
+				event.target.style.borderColor = 'green';
+			}
+            
+			password_count.textContent = `${passwordLength}/8 min`;
+			password_complexity.textContent = `${passwordScore}/5`;
+		});
+
+		function validateUsername(value) {
+			return value.length >= 6 && value.length <= 20 && /[A-Z]/.test(value) && /[a-z]/.test(value) && /[0-9]/.test(value)
+			
+		}
+
+		function validateEmail(value) {
+			return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+		}
+
+		function validatePassword(value) {
+			return value.length >= 8;
+		}
 	</script>
 </body>
 </html>
