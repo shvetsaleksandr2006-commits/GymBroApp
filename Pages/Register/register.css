@@ -466,6 +466,10 @@ p {
     border-color: #0038e1;
 }
 
+.register-btn:disabled {
+    background-color: #242424;
+}
+
 .register-button {
     margin-top: auto;
 }

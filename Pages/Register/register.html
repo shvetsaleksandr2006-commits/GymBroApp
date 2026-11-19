@@ -105,7 +105,7 @@
 					</div>
 
 					<div class="register-button">
-						<button class="register-btn">Sign Up</button>
+						<button class="register-btn" id="register-btn">Sign Up</button>
 					</div>
 
 
@@ -314,9 +314,29 @@
 			password_complexity.textContent = `${passwordScore}/5`;
 		});
 
-		function validateUsername(value) {
-			return value.length >= 6 && value.length <= 20 && /[A-Z]/.test(value) && /[a-z]/.test(value) && /[0-9]/.test(value)
+		document.querySelector('.register-form').addEventListener('submit' , function(event) {
+			event.preventDefault();
+
+			const Username = document.querySelector('#nickname');
+			const Email = document.querySelector('#email');
+			const Password = document.querySelector('#password');
 			
+
+
+			const usernameValid = validateUsername(Username.value);
+			const emailValid = validateEmail(Email.value);
+			const passwordValid = validatePassword(Password.value);
+
+			if (usernameValid && emailValid && passwordValid) {
+				console.log('Form is valid');
+			}
+			else {
+				console.log('Form is invalid');
+			}
+		});
+
+		function validateUsername(value) {
+			return value.length >= 6 && value.length <= 20 && /[A-Z]/.test(value) && /[a-z]/.test(value) && /[0-9]/.test(value);
 		}
 
 		function validateEmail(value) {
@@ -326,6 +346,28 @@
 		function validatePassword(value) {
 			return value.length >= 8;
 		}
+
+
+
+
+
+		function updateButtonState() {
+			const Username = document.querySelector('#nickname');
+			const Email = document.querySelector('#email');
+			const Password = document.querySelector('#password');
+			const signup = document.querySelector('#register-btn');
+
+
+			if (validateUsername(Username.value) && validateEmail(Email.value) && validatePassword(Password.value)) {
+				signup.disabled = false;
+			}
+			else {
+				signup.disabled = true;
+			}
+		}
+
+		document.querySelector('.register-form').addEventListener('input', updateButtonState);
+		updateButtonState();
 	</script>
 </body>
 </html>
